@@ -57,16 +57,16 @@ final class TaskListViewController: UITableViewController {
         var content = cell.defaultContentConfiguration()
         let taskList = taskLists[indexPath.row]
         
-        let displayText: String
+        let activeTasksStatus: String
         
         if taskList.isAllTasksCompleted {
-            displayText = "✓"
+            activeTasksStatus = "✓"
         } else {
-            displayText = "\(taskList.activeTasksCount)"
+            activeTasksStatus = "\(taskList.activeTasksCount)"
         }
         
         content.text = taskList.title
-        content.secondaryText = displayText
+        content.secondaryText = activeTasksStatus
         cell.contentConfiguration = content
         return cell
     }
